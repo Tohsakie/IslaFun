@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">fontanaThacquarG</string>
+    <string name="titreMultiplication">Choisis ta table de multiplication</string>
+    <string name="valider">Valider</string>
+</resources>
