@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FontanaThacquarG">
-        <activity android:name=".ChoiceMultiplyActivity"></activity>
+        <activity android:name=".ChoiceMultiplyActivity" />
         <activity android:name=".ExerciceMultiplyActivity" />
         <activity android:name=".ActivityChoice" />
         <activity android:name=".MathActivity" />
