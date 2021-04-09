@@ -16,7 +16,6 @@ public class ActivityChoice extends AppCompatActivity {
 
     public void onMath(View view){
         Intent MathViewActivityIntent = new Intent(ActivityChoice.this, MathActivity.class);
-
         startActivity(MathViewActivityIntent);
     }
 }

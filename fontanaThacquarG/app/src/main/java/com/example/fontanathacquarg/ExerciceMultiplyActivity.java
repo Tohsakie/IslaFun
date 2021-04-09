@@ -19,7 +19,7 @@ public class ExerciceMultiplyActivity extends AppCompatActivity {
         MATH_KEY = getIntent().getExtras().getInt("laTable");
         ArrayList<String> multiplicationArray = new ArrayList<>();
         String tempStr;
-        for(int i = 0; i < 10; i++){
+        for(int i = 0; i <= 10; i++){
             tempStr = MATH_KEY + " x " + i + " = ";
             multiplicationArray.add(tempStr);
         }
