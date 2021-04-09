@@ -26,7 +26,7 @@ public class ChoiceMultiplyActivity extends AppCompatActivity {
         int laTable = np.getValue();
 
         Intent intent = new Intent(this, ExerciceMultiplyActivity.class);
-        intent.putExtra(ExerciceMultiplyActivity.MATH_KEY,laTable);
+        intent.putExtra("laTable", laTable);
         startActivity(intent);
     }
 }

@@ -10,12 +10,13 @@ import java.util.ArrayList;
 
 public class ExerciceMultiplyActivity extends AppCompatActivity {
 
-    public static final String MATH_KEY = "0";
+    public static int MATH_KEY = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercice_multiply);
+        MATH_KEY = getIntent().getExtras().getInt("laTable");
         ArrayList<String> multiplicationArray = new ArrayList<>();
         String tempStr;
         for(int i = 0; i < 10; i++){
