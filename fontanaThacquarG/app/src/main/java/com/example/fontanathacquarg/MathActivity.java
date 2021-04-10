@@ -16,7 +16,11 @@ public class MathActivity extends AppCompatActivity {
 
     public void onMult(View view){
         Intent ExoViewActivityIntent = new Intent(MathActivity.this, ChoiceMultiplyActivity.class);
+        startActivity(ExoViewActivityIntent);
+    }
 
+    public void onAdd(View view){
+        Intent ExoViewActivityIntent = new Intent(MathActivity.this, ExerciceAdditionActivity.class);
         startActivity(ExoViewActivityIntent);
     }
 }

@@ -14,8 +14,7 @@ import java.util.ArrayList;
 public class ExerciceMultiplyActivity extends AppCompatActivity {
 
     public static int MATH_KEY = 0;
-    private RowAdapter rowAdapter;
-    private ListView listView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +24,7 @@ public class ExerciceMultiplyActivity extends AppCompatActivity {
         ArrayList<Row> multiplicationArray = new ArrayList<>();
         String tempStr;
         Row tempRow;
+        RowAdapter rowAdapter;
         for(int i = 0; i <= 10; i++){
             tempStr = MATH_KEY + " x " + i + " = ";
             tempRow = new Row(tempStr);
@@ -32,7 +32,7 @@ public class ExerciceMultiplyActivity extends AppCompatActivity {
             multiplicationArray.add(tempRow);
         }
 
-        rowAdapter = new RowAdapter(this, R.layout.activity_exercice_multiply_row, multiplicationArray);
+        rowAdapter = new RowAdapter(this, R.layout.activity_exercice_multiply_row, multiplicationArray, "*");
         ListView listView = findViewById(R.id.listView);
         listView.setAdapter(rowAdapter);
     }

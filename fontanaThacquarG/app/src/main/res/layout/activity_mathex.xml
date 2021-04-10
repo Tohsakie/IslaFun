@@ -30,7 +30,8 @@
             android:src="@drawable/plus"
             android:scaleType="fitCenter"
             android:adjustViewBounds="true"
-            android:maxHeight="172dp"/>
+            android:maxHeight="172dp"
+            android:onClick="onAdd"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
