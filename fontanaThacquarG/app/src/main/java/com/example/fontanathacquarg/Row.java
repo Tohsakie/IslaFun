@@ -5,10 +5,11 @@ import android.widget.ArrayAdapter;
 public class Row {
     private String question;
     private String reponse;
+    private int id;
 
     public Row(String question){
         this.question = question;
-        this.reponse = "default";
+        this.reponse = "Fauxx";
     }
 
     public String getQuestion() {
@@ -25,5 +26,13 @@ public class Row {
 
     public void setReponse(String reponse) {
         this.reponse = reponse;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
