@@ -71,8 +71,8 @@ public class RowAdapter extends ArrayAdapter<Row> {
                     questionStr = question.getText().toString().replaceAll(" ", "");
 
                     if(m_operator.equals("*")){
-                        numQuestion1 = Integer.parseInt(questionStr.split("\\*", 2)[0]);
-                        numQuestion2 = Integer.parseInt(questionStr.split("\\*", 2)[1]);
+                        numQuestion1 = Integer.parseInt(questionStr.split("x", 2)[0].replace(" ", "").replace("=", ""));
+                        numQuestion2 = Integer.parseInt(questionStr.split("x", 2)[1].replace(" ", "").replace("=", ""));
                         numReponse = Integer.parseInt(reponse.getText().toString());
                         numReponseCorrect = numQuestion1 * numQuestion2;
                         if(String.valueOf(numReponseCorrect).length() == reponse.getText().length()){
@@ -80,12 +80,19 @@ public class RowAdapter extends ArrayAdapter<Row> {
                             System.out.println(reponse.getText().length());
                             if(numReponse == numReponseCorrect){
                                 resultat.setText("VRAI");
+                                nbBonneReponses++;
                             }
                             else{
                                 resultat.setText("FAUX");
                             }
 
                             reponse.setEnabled(false);
+                            nbOperationDone++;
+                            if (nbOperationDone == 10){
+                                Intent resultatIntent = new Intent(m_context, ResultatAdditionActivity.class);
+                                resultatIntent.putExtra("note", nbBonneReponses);
+                                m_context.startActivity(resultatIntent);
+                            }
                         }
                     }
                     else if(m_operator.equals("+")){
