@@ -25,7 +25,7 @@ public class ExerciceMultiplyActivity extends AppCompatActivity {
         String tempStr;
         Row tempRow;
         RowAdapter rowAdapter;
-        for(int i = 0; i <= 10; i++){
+        for(int i = 1; i <= 10; i++){
             tempStr = MATH_KEY + " x " + i + " = ";
             tempRow = new Row(tempStr);
             tempRow.setId(i);

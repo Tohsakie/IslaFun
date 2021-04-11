@@ -22,7 +22,7 @@ public class ExerciceAdditionActivity extends AppCompatActivity {
         RowAdapter rowAdapter;
         ListView listView;
 
-        for(int i = 0; i <= 10; i++){
+        for(int i = 1; i <= 10; i++){
             tempStr = new Random().nextInt(100) + " + " + new Random().nextInt(100) + " = ";
             tempRow = new Row(tempStr);
             tempRow.setId(i);
