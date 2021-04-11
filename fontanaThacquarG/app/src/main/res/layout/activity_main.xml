@@ -16,17 +16,18 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="horizontal">
+
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:maxHeight="172dp"
+                android:maxHeight="50dp"
                 android:scaleType="fitCenter"
                 android:src="@drawable/user"
                 android:onClick="onAno" />
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Ano"
                 android:gravity="center"/>
