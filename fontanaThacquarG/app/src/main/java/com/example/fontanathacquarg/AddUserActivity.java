@@ -31,7 +31,7 @@ public class AddUserActivity extends AppCompatActivity {
                 System.out.println("############################");
             }
         });
-
+    }
 
         private void getUsers(){
             ///////////////////////

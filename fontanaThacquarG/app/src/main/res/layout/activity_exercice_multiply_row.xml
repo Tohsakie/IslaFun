@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:textSize="20sp"
-        android:inputType="numberDecimal"
+        android:inputType="phone"
         android:width="80sp"
         android:singleLine="true"
         android:maxLength="5"/>
