@@ -2,7 +2,7 @@
 //import androidx.*;
 //import java.io.Serializable;
 //
-//@Entity
+//
 //public class User{
 //    @PrimaryKey(autogenerate = true)
 //    private int id;
