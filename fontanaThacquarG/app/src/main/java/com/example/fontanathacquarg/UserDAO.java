@@ -8,13 +8,11 @@ import androidx.room.Dao;
 import java.util.List;
 
 @Dao
-public abstract class UserDAO {
-    @Query("SELECT * FROM User")
-    List<User> getAll() {
-        return null;
-    }
+public interface UserDAO {
+    @Query("SELECT * FROM user")
+    public List<User> getAll();
 
     @Insert
-    void insert(User user) {}
+    void insert(User user);
 
 }

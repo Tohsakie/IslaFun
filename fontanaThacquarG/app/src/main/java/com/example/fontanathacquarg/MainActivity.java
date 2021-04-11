@@ -16,7 +16,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void onAno(View view){
         Intent ExoViewActivityIntent = new Intent(MainActivity.this, ActivityChoice.class);
+        startActivity(ExoViewActivityIntent);
+    }
 
+    public void onPlus(View view){
+        Intent ExoViewActivityIntent = new Intent(MainActivity.this, AddUserActivity.class);
         startActivity(ExoViewActivityIntent);
     }
 }
