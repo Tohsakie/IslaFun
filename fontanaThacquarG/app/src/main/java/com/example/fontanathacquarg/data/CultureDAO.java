@@ -2,10 +2,6 @@ package com.example.fontanathacquarg.data;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Dao;
-
-import com.example.fontanathacquarg.culture.Culture;
-import com.example.fontanathacquarg.data.User;
-
 import java.util.List;
 
 @Dao

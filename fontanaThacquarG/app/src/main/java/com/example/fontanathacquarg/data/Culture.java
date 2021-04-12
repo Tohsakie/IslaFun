@@ -1,4 +1,4 @@
-package com.example.fontanathacquarg.culture;
+package com.example.fontanathacquarg.data;
 
 import androidx.*;
 import java.io.Serializable;
