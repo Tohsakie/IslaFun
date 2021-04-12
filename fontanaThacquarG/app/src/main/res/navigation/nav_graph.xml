@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainActivity">
+
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.fontanathacquarg.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" >
+        <action
+            android:id="@+id/action_mainActivity_to_addUserActivity"
+            app:destination="@id/addUserActivity" />
+        <action
+            android:id="@+id/action_mainActivity_to_activityChoice2"
+            app:destination="@id/activityChoice" />
+    </activity>
+    <activity
+        android:id="@+id/activityChoice"
+        android:name="com.example.fontanathacquarg.ActivityChoice"
+        android:label="activity_choice"
+        tools:layout="@layout/activity_choice" >
+        <action
+            android:id="@+id/action_activityChoice_to_mathActivity"
+            app:destination="@id/mathActivity" />
+        <action
+            android:id="@+id/action_activityChoice_to_cultureActivity"
+            app:destination="@id/cultureActivity" />
+    </activity>
+    <activity
+        android:id="@+id/addUserActivity"
+        android:name="com.example.fontanathacquarg.AddUserActivity"
+        android:label="activity_add_user"
+        tools:layout="@layout/activity_add_user" >
+        <action
+            android:id="@+id/action_addUserActivity_to_mainActivity"
+            app:destination="@id/mainActivity" />
+    </activity>
+    <activity
+        android:id="@+id/mathActivity"
+        android:name="com.example.fontanathacquarg.math.MathActivity"
+        android:label="activity_mathex"
+        tools:layout="@layout/activity_mathex" >
+        <action
+            android:id="@+id/action_mathActivity_to_choiceMultiplyActivity"
+            app:destination="@id/choiceMultiplyActivity" />
+        <action
+            android:id="@+id/action_mathActivity_to_exerciceAdditionActivity"
+            app:destination="@id/exerciceAdditionActivity" />
+    </activity>
+    <activity
+        android:id="@+id/choiceMultiplyActivity"
+        android:name="com.example.fontanathacquarg.math.ChoiceMultiplyActivity"
+        android:label="activity_choice_multiply"
+        tools:layout="@layout/activity_choice_multiply" >
+        <action
+            android:id="@+id/action_choiceMultiplyActivity_to_exerciceMultiplyActivity"
+            app:destination="@id/exerciceMultiplyActivity" />
+    </activity>
+    <activity
+        android:id="@+id/exerciceMultiplyActivity"
+        android:name="com.example.fontanathacquarg.math.ExerciceMultiplyActivity"
+        android:label="activity_exercice_multiply"
+        tools:layout="@layout/activity_exercice_multiply" >
+        <action
+            android:id="@+id/action_exerciceMultiplyActivity_to_resultatActivity"
+            app:destination="@id/resultatActivity" />
+    </activity>
+    <activity
+        android:id="@+id/cultureExerciceActivity"
+        android:name="com.example.fontanathacquarg.culture.CultureExerciceActivity"
+        android:label="activity_culture_exercice"
+        tools:layout="@layout/activity_culture_exercice" >
+        <action
+            android:id="@+id/action_cultureExerciceActivity_to_resultatActivity"
+            app:destination="@id/resultatActivity" />
+    </activity>
+    <activity
+        android:id="@+id/resultatActivity"
+        android:name="com.example.fontanathacquarg.math.ResultatActivity"
+        android:label="ResultatActivity" >
+        <action
+            android:id="@+id/action_resultatActivity_to_activityChoice"
+            app:destination="@id/activityChoice" />
+    </activity>
+    <activity
+        android:id="@+id/exerciceAdditionActivity"
+        android:name="com.example.fontanathacquarg.math.ExerciceAdditionActivity"
+        android:label="ExerciceAdditionActivity" >
+        <action
+            android:id="@+id/action_exerciceAdditionActivity_to_resultatActivity"
+            app:destination="@id/resultatActivity" />
+    </activity>
+    <activity
+        android:id="@+id/cultureActivity"
+        android:name="com.example.fontanathacquarg.culture.CultureActivity"
+        android:label="CultureActivity" >
+        <action
+            android:id="@+id/action_cultureActivity_to_addQuestionActivity"
+            app:destination="@id/addQuestionActivity" />
+        <action
+            android:id="@+id/action_cultureActivity_to_cultureExerciceActivity"
+            app:destination="@id/cultureExerciceActivity" />
+    </activity>
+    <activity
+        android:id="@+id/addQuestionActivity"
+        android:name="com.example.fontanathacquarg.culture.AddQuestionActivity"
+        android:label="AddQuestionActivity" >
+        <action
+            android:id="@+id/action_addQuestionActivity_to_cultureActivity"
+            app:destination="@id/cultureActivity" />
+    </activity>
+</navigation>
