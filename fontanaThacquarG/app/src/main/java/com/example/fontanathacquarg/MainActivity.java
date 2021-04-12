@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-
+        mdb.getAppDatabase().cultureDAO().delete();
 
         // Mise à jour des taches
         getUsers();
@@ -155,45 +155,50 @@ public class MainActivity extends AppCompatActivity {
 
 
         for (int i = 0; i <= 9; i++) {
+            System.out.println(question.get(i));
+            System.out.println(bonneReponse.get(i));
+            System.out.println(mauvaiseReponse1.get(i));
+            System.out.println(mauvaiseReponse2.get(i));
+
             culture.setQuestion(question.get(i));
             culture.setBonneReponse(bonneReponse.get(i));
             culture.setMauvaiseReponse1(mauvaiseReponse1.get(i));
             culture.setMauvaiseReponse2(mauvaiseReponse2.get(i));
-            //mdb.getAppDatabase().cultureDAO().insert(culture);
+            mdb.getAppDatabase().cultureDAO().insert(culture);
 
-            class SaveCulture extends AsyncTask<Void, Void, Culture> {
+//            class SaveCulture extends AsyncTask<Void, Void, Culture> {
+//
+//                @Override
+//                protected Culture doInBackground(Void... voids) {
+//
+//                    // creating a task
+//                    Culture culture1 = culture;
+//
+//
+//                    mdb.getAppDatabase()
+//                            .cultureDAO()
+//                            .insert(culture1);
+//
+//                    // mettre à jour l'id de la tache
+//                    // Nécessaire si on souhaite avoir accès à l'id plus tard dans l'activité
+////                user.setId(id);
+//
+//
+//                    return culture1;
+//                }
 
-                @Override
-                protected Culture doInBackground(Void... voids) {
+//                @Override
+//                protected void onPostExecute(Culture culture1) {
+//                    super.onPostExecute(culture);
+//
+//                    // Quand la tache est créée, on arrête l'activité AddTaskActivity (on l'enleve de la pile d'activités)
+//                    setResult(RESULT_OK);
+//                    Toast.makeText(getApplicationContext(), "Saved", Toast.LENGTH_LONG).show();
+//                }
 
-                    // creating a task
-                    Culture culture1 = culture;
-
-
-                    mdb.getAppDatabase()
-                            .cultureDAO()
-                            .insert(culture1);
-
-                    // mettre à jour l'id de la tache
-                    // Nécessaire si on souhaite avoir accès à l'id plus tard dans l'activité
-//                user.setId(id);
-
-
-                    return culture1;
-                }
-
-                @Override
-                protected void onPostExecute(Culture culture1) {
-                    super.onPostExecute(culture);
-
-                    // Quand la tache est créée, on arrête l'activité AddTaskActivity (on l'enleve de la pile d'activités)
-                    setResult(RESULT_OK);
-                    Toast.makeText(getApplicationContext(), "Saved", Toast.LENGTH_LONG).show();
-                }
-
-            }
-            SaveCulture st = new SaveCulture();
-            st.execute();
+//            }
+//            SaveCulture st = new SaveCulture();
+//            st.execute();
 
         }
     }

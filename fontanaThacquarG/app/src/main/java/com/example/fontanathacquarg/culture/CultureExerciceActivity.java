@@ -66,7 +66,7 @@ public class CultureExerciceActivity extends AppCompatActivity {
     public void valider(View view){
 
         RadioGroup radioGroup = findViewById(R.id.radio_groupe);
-
+        radioGroup.clearCheck();
         switch (bonneRep){
             case 0:
                 if (radioGroup.getCheckedRadioButtonId() == R.id.rep1){
@@ -82,11 +82,9 @@ public class CultureExerciceActivity extends AppCompatActivity {
                 }
         }
         updateQuestion();
-
     }
 
     public void updateQuestion(){
-
 
 
         if(cultureList.size() >= round){

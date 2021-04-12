@@ -9,8 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FontanaThacquarG">
-        <activity android:name=".culture.CultureExerciceActivity"></activity>
-        <activity android:name=".culture.CultureActivity" />
+        <activity android:name=".culture.CultureActivity"></activity>
+        <activity android:name=".culture.AddQuestionActivity" />
+        <activity android:name=".culture.CultureExerciceActivity" />
         <activity android:name=".AddUserActivity" />
         <activity android:name=".math.ResultatActivity" />
         <activity android:name=".math.ExerciceAdditionActivity" />

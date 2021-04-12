@@ -6,7 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.fontanathacquarg.culture.CultureActivity;
 import com.example.fontanathacquarg.culture.CultureExerciceActivity;
+import com.example.fontanathacquarg.data.Culture;
 import com.example.fontanathacquarg.math.MathActivity;
 
 public class ActivityChoice extends AppCompatActivity {
@@ -18,13 +20,13 @@ public class ActivityChoice extends AppCompatActivity {
     }
 
     public void onMath(View view){
-        Intent MathViewActivityIntent = new Intent(ActivityChoice.this, MathActivity.class);
-        startActivity(MathViewActivityIntent);
+        Intent mathViewActivityIntent = new Intent(ActivityChoice.this, MathActivity.class);
+        startActivity(mathViewActivityIntent);
     }
 
     public void onCulture(View view){
-        Intent intent = new Intent(ActivityChoice.this, CultureExerciceActivity.class);
-        startActivity(intent);
+        Intent cultureActivity = new Intent(ActivityChoice.this, CultureActivity.class);
+        startActivity(cultureActivity);
     }
 
 
