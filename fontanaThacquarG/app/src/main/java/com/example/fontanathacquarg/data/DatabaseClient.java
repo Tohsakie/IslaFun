@@ -8,6 +8,7 @@ public class DatabaseClient {
     private Context mCtx;
     private static DatabaseClient mInstance;
 
+
     //our app database object
     private AppDatabase appDatabase;
 
@@ -16,7 +17,7 @@ public class DatabaseClient {
 
         //creating the app database with Room database builder
         //MyToDos is the name of the database
-        appDatabase = Room.databaseBuilder(mCtx, AppDatabase.class, "User").build();
+        appDatabase = Room.databaseBuilder(mCtx, AppDatabase.class, "User").allowMainThreadQueries().build();
     }
 
     public static synchronized DatabaseClient getInstance(Context mCtx) {

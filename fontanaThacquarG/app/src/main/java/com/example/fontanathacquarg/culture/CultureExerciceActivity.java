@@ -3,14 +3,17 @@ package com.example.fontanathacquarg.culture;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.fontanathacquarg.R;
 import com.example.fontanathacquarg.data.Culture;
+import com.example.fontanathacquarg.data.CultureDAO;
 import com.example.fontanathacquarg.data.DatabaseClient;
 import com.example.fontanathacquarg.math.ResultatActivity;
 
@@ -18,19 +21,44 @@ import java.util.List;
 
 public class CultureExerciceActivity extends AppCompatActivity {
 
-    private DatabaseClient mdb;
-    List<Culture> cultureList = mdb.getAppDatabase()
-            .cultureDAO()
-            .getAll();
+    List<Culture> cultureList;
 
     private int round = 0;
     private int bonneRep = 0;
     private int nbBonneReponses = 0;
 
+    private CultureDAO mcultureDao;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_culture_exercice);
+        DatabaseClient mdb = DatabaseClient.getInstance(getApplicationContext());
+
+
+
+//        class getCultures extends AsyncTask<Void, Void, List<Culture>>{
+//
+//            private CultureDAO mAsyncTaskDao;
+//            List<Culture> a;
+//
+//            getCultures(CultureDAO dao) {
+//                mAsyncTaskDao = dao;
+//            }
+//
+//            @Override
+//            protected List<Culture> doInBackground(Void... voids) {
+//                return mAsyncTaskDao.getAll();
+//            }
+//
+//        }
+//        getCultures gt = new getCultures(mcultureDao);
+//        gt.execute();
+
+
+        cultureList = mdb.getAppDatabase()
+                .cultureDAO()
+                .getAll();
 
         updateQuestion();
     }
@@ -69,6 +97,8 @@ public class CultureExerciceActivity extends AppCompatActivity {
             TextView question = findViewById(R.id.question);
 
             question.setText(cultureList.get(round).getQuestion());
+
+            System.out.println("\n\n\n\n---------"+ cultureList.get(round).getQuestion() + "\n\n\n\n---------");
 
             int value = (int) (Math.random()*(2));
 
