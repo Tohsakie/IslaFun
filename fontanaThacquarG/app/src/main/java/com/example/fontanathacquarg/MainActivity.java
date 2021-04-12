@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         ListView listView = findViewById(R.id.mainListView);
         adapter = new UserAdapter(this, new ArrayList<User>());
         listView.setAdapter(adapter);
-        mdb = DatabaseClient.getInstance(getApplicationContext());;
+        mdb = DatabaseClient.getInstance(getApplicationContext());
 
     }
 

@@ -15,4 +15,6 @@ public interface UserDAO {
     @Insert
     void insert(User user);
 
+    @Query("SELECT id, nom, prenom FROM user WHERE id = :userId LIMIT 1")
+    public User findUserById(int userId);
 }

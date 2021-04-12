@@ -20,8 +20,8 @@ public class AddUserActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mdb = DatabaseClient.getInstance(getApplicationContext());
         setContentView(R.layout.activity_add_user);
+        mdb = DatabaseClient.getInstance(getApplicationContext());
 
         Button button = findViewById(R.id.valider);
         button.setOnClickListener(new View.OnClickListener() {
