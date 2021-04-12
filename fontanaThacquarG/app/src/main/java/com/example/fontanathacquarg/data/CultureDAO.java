@@ -17,5 +17,5 @@ public interface CultureDAO {
     void insert(Culture culture);
 
     @Query("SELECT * FROM user WHERE id = :id LIMIT 1")
-    public User findUserById(int id);
+    public Culture findCultureById(int id);
 }
