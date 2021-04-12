@@ -1,4 +1,4 @@
-package com.example.fontanathacquarg;
+package com.example.fontanathacquarg.math;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.NumberPicker;
+
+import com.example.fontanathacquarg.R;
 
 public class ChoiceMultiplyActivity extends AppCompatActivity {
 

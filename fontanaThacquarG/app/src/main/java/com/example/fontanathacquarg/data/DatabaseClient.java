@@ -1,10 +1,7 @@
-package com.example.fontanathacquarg;
+package com.example.fontanathacquarg.data;
 
 import androidx.room.Room;
 import android.content.Context;
-import android.os.AsyncTask;
-
-import java.util.List;
 
 public class DatabaseClient {
 

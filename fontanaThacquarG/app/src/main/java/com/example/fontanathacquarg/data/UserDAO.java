@@ -1,9 +1,6 @@
-package com.example.fontanathacquarg;
-import androidx.*;
-import androidx.room.Delete;
+package com.example.fontanathacquarg.data;
 import androidx.room.Insert;
 import androidx.room.Query;
-import androidx.room.Update;
 import androidx.room.Dao;
 import java.util.List;
 

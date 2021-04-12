@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.fontanathacquarg.math.MathActivity;
+
 public class ActivityChoice extends AppCompatActivity {
 
     @Override

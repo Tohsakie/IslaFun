@@ -9,13 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FontanaThacquarG">
-        <activity android:name=".AddUserActivity"></activity>
-        <activity android:name=".ResultatAdditionActivity" />
-        <activity android:name=".ExerciceAdditionActivity" />
-        <activity android:name=".ChoiceMultiplyActivity" />
-        <activity android:name=".ExerciceMultiplyActivity" />
+        <activity android:name=".culture.CultureExerciceActivity"></activity>
+        <activity android:name=".culture.CultureActivity" />
+        <activity android:name=".AddUserActivity" />
+        <activity android:name=".math.ResultatActivity" />
+        <activity android:name=".math.ExerciceAdditionActivity" />
+        <activity android:name=".math.ChoiceMultiplyActivity" />
+        <activity android:name=".math.ExerciceMultiplyActivity" />
         <activity android:name=".ActivityChoice" />
-        <activity android:name=".MathActivity" />
+        <activity android:name=".math.MathActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

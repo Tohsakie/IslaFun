@@ -1,4 +1,4 @@
-package com.example.fontanathacquarg;
+package com.example.fontanathacquarg.math;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
@@ -13,10 +13,8 @@ import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import org.w3c.dom.Text;
+import com.example.fontanathacquarg.R;
 
-import java.lang.reflect.Array;
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 
 public class RowAdapter extends ArrayAdapter<Row> {
@@ -89,7 +87,7 @@ public class RowAdapter extends ArrayAdapter<Row> {
                             reponse.setEnabled(false);
                             nbOperationDone++;
                             if (nbOperationDone == 10){
-                                Intent resultatIntent = new Intent(m_context, ResultatAdditionActivity.class);
+                                Intent resultatIntent = new Intent(m_context, ResultatActivity.class);
                                 resultatIntent.putExtra("note", nbBonneReponses);
                                 m_context.startActivity(resultatIntent);
                             }
@@ -114,7 +112,7 @@ public class RowAdapter extends ArrayAdapter<Row> {
                             reponse.setEnabled(false);
                             nbOperationDone++;
                             if (nbOperationDone == 10){
-                                Intent resultatIntent = new Intent(m_context, ResultatAdditionActivity.class);
+                                Intent resultatIntent = new Intent(m_context, ResultatActivity.class);
                                 resultatIntent.putExtra("note", nbBonneReponses);
                                 m_context.startActivity(resultatIntent);
                             }

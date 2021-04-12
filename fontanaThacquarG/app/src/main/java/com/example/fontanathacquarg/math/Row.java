@@ -1,4 +1,4 @@
-package com.example.fontanathacquarg;
+package com.example.fontanathacquarg.math;
 
 import android.widget.ArrayAdapter;
 

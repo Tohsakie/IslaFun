@@ -1,9 +1,7 @@
 package com.example.fontanathacquarg;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -11,7 +9,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.util.List;
+import com.example.fontanathacquarg.data.DatabaseClient;
+import com.example.fontanathacquarg.data.User;
+import com.example.fontanathacquarg.data.UserAdapter;
 
 public class AddUserActivity extends AppCompatActivity {
     private UserAdapter adapter;

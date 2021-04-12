@@ -9,6 +9,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
 
+import com.example.fontanathacquarg.data.DatabaseClient;
+import com.example.fontanathacquarg.data.User;
+import com.example.fontanathacquarg.data.UserAdapter;
+
 import java.util.ArrayList;
 import java.util.List;
 

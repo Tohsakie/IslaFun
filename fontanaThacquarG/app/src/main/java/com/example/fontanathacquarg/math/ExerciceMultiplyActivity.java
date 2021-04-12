@@ -1,13 +1,11 @@
-package com.example.fontanathacquarg;
+package com.example.fontanathacquarg.math;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
+
+import com.example.fontanathacquarg.R;
 
 import java.util.ArrayList;
 

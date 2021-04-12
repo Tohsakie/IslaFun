@@ -1,22 +1,15 @@
-package com.example.fontanathacquarg;
+package com.example.fontanathacquarg.data;
 
 import android.content.Context;
-import android.content.Intent;
-import android.os.AsyncTask;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.TextView;
 
-import androidx.annotation.Nullable;
-
-import org.w3c.dom.Text;
+import com.example.fontanathacquarg.R;
 
 import java.util.List;
-
-import static android.app.Activity.RESULT_OK;
 
 public class UserAdapter extends ArrayAdapter<User> {
     private DatabaseClient mdb;
