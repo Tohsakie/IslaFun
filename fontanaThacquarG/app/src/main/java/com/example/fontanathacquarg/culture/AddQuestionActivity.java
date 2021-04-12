@@ -27,7 +27,6 @@ public class AddQuestionActivity extends AppCompatActivity {
         EditText reponse2 = findViewById(R.id.add_mauvaise_reponse2);
 
         Culture culture = new Culture();
-        mdb.getAppDatabase().cultureDAO().insert(culture);
 
         Button button = findViewById(R.id.valider);
         button.setOnClickListener(new View.OnClickListener() {

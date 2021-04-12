@@ -62,22 +62,12 @@ public class AddUserActivity extends AppCompatActivity {
             @Override
             protected User doInBackground(Void... voids) {
 
-                // creating a task
                 User user = new User(nom, prenom);
 
-                // adding to database
-//                long id = mdb.getAppDatabase()
-//                        .userDao()
-//                        .insert(user);
 
                     mdb.getAppDatabase()
                         .userDao()
                         .insert(user);
-
-                // mettre à jour l'id de la tache
-                // Nécessaire si on souhaite avoir accès à l'id plus tard dans l'activité
-//                user.setId(id);
-
 
                 return user;
             }
@@ -86,28 +76,13 @@ public class AddUserActivity extends AppCompatActivity {
             protected void onPostExecute(User user) {
                 super.onPostExecute(user);
 
-                // Quand la tache est créée, on arrête l'activité AddTaskActivity (on l'enleve de la pile d'activités)
                 setResult(RESULT_OK);
                 finish();
                 Toast.makeText(getApplicationContext(), "Saved", Toast.LENGTH_LONG).show();
             }
         }
 
-        //////////////////////////
-        // IMPORTANT bien penser à executer la demande asynchrone
+
         SaveUser st = new SaveUser();
         st.execute();
-    }
-//        @Override
-//        protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-//            super.onActivityResult(requestCode, resultCode, data);
-//
-//            if (requestCode == REQUEST_CODE_ADD && resultCode == RESULT_OK) {
-//
-//                // Mise à jour des taches
-//                getUsers();
-//            }
-//        }
-
-
-    }
+    }}

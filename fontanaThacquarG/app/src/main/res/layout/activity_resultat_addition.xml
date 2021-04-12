@@ -21,14 +21,8 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="🏠 Acceuil 🏠"
+            android:text="🏠 Accueil 🏠"
             android:onClick="onHome"/>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="😎 Recommencer 😎"
-            android:onClick="onRestart"/>
-
 
     </LinearLayout>
 

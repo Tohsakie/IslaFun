@@ -27,9 +27,4 @@ public class ResultatActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void onRestart(View view){
-        Intent intent = new Intent(ResultatActivity.this, MathActivity.class);
-        startActivity(intent);
-    }
-
 }

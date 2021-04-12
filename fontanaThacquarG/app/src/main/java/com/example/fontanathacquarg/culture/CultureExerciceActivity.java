@@ -18,6 +18,7 @@ import com.example.fontanathacquarg.data.DatabaseClient;
 import com.example.fontanathacquarg.math.ResultatActivity;
 
 import java.util.List;
+import java.util.Random;
 
 public class CultureExerciceActivity extends AppCompatActivity {
 
@@ -36,26 +37,6 @@ public class CultureExerciceActivity extends AppCompatActivity {
         DatabaseClient mdb = DatabaseClient.getInstance(getApplicationContext());
 
 
-
-//        class getCultures extends AsyncTask<Void, Void, List<Culture>>{
-//
-//            private CultureDAO mAsyncTaskDao;
-//            List<Culture> a;
-//
-//            getCultures(CultureDAO dao) {
-//                mAsyncTaskDao = dao;
-//            }
-//
-//            @Override
-//            protected List<Culture> doInBackground(Void... voids) {
-//                return mAsyncTaskDao.getAll();
-//            }
-//
-//        }
-//        getCultures gt = new getCultures(mcultureDao);
-//        gt.execute();
-
-
         cultureList = mdb.getAppDatabase()
                 .cultureDAO()
                 .getAll();
@@ -66,62 +47,78 @@ public class CultureExerciceActivity extends AppCompatActivity {
     public void valider(View view){
 
         RadioGroup radioGroup = findViewById(R.id.radio_groupe);
-        radioGroup.clearCheck();
+
         switch (bonneRep){
             case 0:
                 if (radioGroup.getCheckedRadioButtonId() == R.id.rep1){
-                    bonneRep++;
+                    nbBonneReponses++;
                 }
             case 1:
                 if (radioGroup.getCheckedRadioButtonId() == R.id.rep2){
-                    bonneRep++;
+                    nbBonneReponses++;
                 }
             case 2:
                 if (radioGroup.getCheckedRadioButtonId() == R.id.rep3){
-                    bonneRep++;
+                    nbBonneReponses++;
                 }
         }
+        radioGroup.clearCheck();
         updateQuestion();
     }
 
     public void updateQuestion(){
 
 
-        if(cultureList.size() >= round){
+
+        if(round < 10){
+
+            Random random = new Random();
+//            System.out.println(cultureList.size());
+//            System.out.println(cultureList.size());
+//            System.out.println(cultureList.size());
+//            System.out.println(cultureList.size());
+//            System.out.println(cultureList.size());
+//            System.out.println(cultureList.size());
+//            System.out.println(cultureList.size());
+//            System.out.println(cultureList.size());
+            int value;
+            if(cultureList.size() == 1){
+                value= 0;
+            }else{
+                value =  random.nextInt(cultureList.size()-1);
+            }
             RadioButton rep1 = findViewById(R.id.rep1);
             RadioButton rep2 = findViewById(R.id.rep2);
             RadioButton rep3 = findViewById(R.id.rep3);
 
             TextView question = findViewById(R.id.question);
+            question.setText(cultureList.get(value).getQuestion());
 
-            question.setText(cultureList.get(round).getQuestion());
-
-            System.out.println("\n\n\n\n---------"+ cultureList.get(round).getQuestion() + "\n\n\n\n---------");
-
-            int value = (int) (Math.random()*(2));
-
-            switch (value){
+            switch (new Random().nextInt(2)){
                 case 0:
-                    rep1.setText(cultureList.get(round).getBonneReponse());
-                    rep2.setText(cultureList.get(round).getMauvaiseReponse1());
-                    rep2.setText(cultureList.get(round).getMauvaiseReponse2());
+                    rep1.setText(cultureList.get(value).getBonneReponse());
+                    rep2.setText(cultureList.get(value).getMauvaiseReponse1());
+                    rep3.setText(cultureList.get(value).getMauvaiseReponse2());
                     bonneRep = 0;
                     break;
                 case 1:
-                    rep2.setText(cultureList.get(round).getBonneReponse());
-                    rep3.setText(cultureList.get(round).getMauvaiseReponse1());
-                    rep1.setText(cultureList.get(round).getMauvaiseReponse2());
+                    rep2.setText(cultureList.get(value).getBonneReponse());
+                    rep3.setText(cultureList.get(value).getMauvaiseReponse1());
+                    rep1.setText(cultureList.get(value).getMauvaiseReponse2());
                     bonneRep = 1;
                     break;
                 case 2:
-                    rep3.setText(cultureList.get(round).getBonneReponse());
-                    rep1.setText(cultureList.get(round).getMauvaiseReponse1());
-                    rep2.setText(cultureList.get(round).getMauvaiseReponse2());
+                    rep3.setText(cultureList.get(value).getBonneReponse());
+                    rep1.setText(cultureList.get(value).getMauvaiseReponse1());
+                    rep2.setText(cultureList.get(value).getMauvaiseReponse2());
                     bonneRep = 2;
                     break;
 
-            }
+                default:
+                    System.out.println("erreur");
 
+            }
+            cultureList.remove(value);
             round++;
         } else {
             Intent resultatIntent = new Intent(this, ResultatActivity.class);
