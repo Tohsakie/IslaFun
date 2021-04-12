@@ -1,5 +1,4 @@
 package com.example.fontanathacquarg.data;
-import androidx.lifecycle.LiveData;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Dao;

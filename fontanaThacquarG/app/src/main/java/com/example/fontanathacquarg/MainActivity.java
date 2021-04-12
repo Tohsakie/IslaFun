@@ -8,7 +8,6 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.example.fontanathacquarg.data.Culture;
 import com.example.fontanathacquarg.data.DatabaseClient;
@@ -91,7 +90,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-
         // Mise à jour des taches
         getUsers();
         ArrayList<String> question = new ArrayList<>();
@@ -102,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
         question.add("Qu’est-ce qui doit arriver sur le stigmate pour que la fleur se reproduise ?");
         question.add("D’un iceberg flottant dans  les régions polaires, on ne voit en fait :");
 
-        question.add("Combien de kilos de raisin faut-il pour faire 50 litres de vin ?");
+        question.add("Combien de kilos de raisin faut-il pour faire 50 litres de vin ?" );
         question.add("Le baobab est un des plus grands arbres du monde. Cet arbre est aussi appelé :");
         question.add("Lorsqu’un volcan se déchaine, on parle :");
         question.add("Qu’est-ce qu’une météorite ?");
@@ -124,77 +122,42 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayList<String> mauvaiseReponse1 = new ArrayList<>();
 
-        mauvaiseReponse1.add("La trompette-de-la-mort");
-        mauvaiseReponse1.add("d’Afrique");
-        mauvaiseReponse1.add("Un grohir");
-        mauvaiseReponse1.add("L’amidon");
-        mauvaiseReponse1.add("qu’un tiers");
+        bonneReponse.add("La trompette-de-la-mort");
+        bonneReponse.add("d’Afrique");
+        bonneReponse.add("Un grohir");
+        bonneReponse.add("L’amidon");
+        bonneReponse.add("qu’un tiers");
 
-        mauvaiseReponse1.add("50 kg");
-        mauvaiseReponse1.add("arbre-mammouth");
-        mauvaiseReponse1.add("d’érosion");
-        mauvaiseReponse1.add("Une boule de gaz");
-        mauvaiseReponse1.add("courbées vers le bas");
+        bonneReponse.add("50 kg");
+        bonneReponse.add("arbre-mammouth");
+        bonneReponse.add("d’érosion");
+        bonneReponse.add("Une boule de gaz");
+        bonneReponse.add("courbées vers le bas");
 
 
         ArrayList<String> mauvaiseReponse2 = new ArrayList<>();
 
-        mauvaiseReponse2.add("La barbe-de-bouc");
-        mauvaiseReponse2.add("d’Indonésie");
-        mauvaiseReponse2.add("Un lourhir");
-        mauvaiseReponse2.add("La farine");
-        mauvaiseReponse2.add("que la moitié");
+        bonneReponse.add("La barbe-de-bouc");
+        bonneReponse.add("d’Indonésie");
+        bonneReponse.add("Un lourhir");
+        bonneReponse.add("La farine");
+        bonneReponse.add("que la moitié");
 
-        mauvaiseReponse2.add("250 kg");
-        mauvaiseReponse2.add("arbre géant");
-        mauvaiseReponse2.add("d’équation");
-        mauvaiseReponse2.add("Une accumulation de matière");
-        mauvaiseReponse2.add("droites, elles se courbent après la récolte");
+        bonneReponse.add("250 kg");
+        bonneReponse.add("arbre géant");
+        bonneReponse.add("d’équation");
+        bonneReponse.add("Une accumulation de matière");
+        bonneReponse.add("droites, elles se courbent après la récolte");
 
         Culture culture = new Culture();
 
-
-        for (int i = 0; i <= 9; i++) {
+        for(int i =0; i <= 10; i++){
             culture.setQuestion(question.get(i));
             culture.setBonneReponse(bonneReponse.get(i));
             culture.setMauvaiseReponse1(mauvaiseReponse1.get(i));
             culture.setMauvaiseReponse2(mauvaiseReponse2.get(i));
-            //mdb.getAppDatabase().cultureDAO().insert(culture);
-
-            class SaveCulture extends AsyncTask<Void, Void, Culture> {
-
-                @Override
-                protected Culture doInBackground(Void... voids) {
-
-                    // creating a task
-                    Culture culture1 = culture;
-
-
-                    mdb.getAppDatabase()
-                            .cultureDAO()
-                            .insert(culture1);
-
-                    // mettre à jour l'id de la tache
-                    // Nécessaire si on souhaite avoir accès à l'id plus tard dans l'activité
-//                user.setId(id);
-
-
-                    return culture1;
-                }
-
-                @Override
-                protected void onPostExecute(Culture culture1) {
-                    super.onPostExecute(culture);
-
-                    // Quand la tache est créée, on arrête l'activité AddTaskActivity (on l'enleve de la pile d'activités)
-                    setResult(RESULT_OK);
-                    Toast.makeText(getApplicationContext(), "Saved", Toast.LENGTH_LONG).show();
-                }
-
-            }
-            SaveCulture st = new SaveCulture();
-            st.execute();
-
+            mdb.getAppDatabase().cultureDAO().insert(culture);
         }
+        mdb.getAppDatabase().cultureDAO().insert(culture);
     }
 }
