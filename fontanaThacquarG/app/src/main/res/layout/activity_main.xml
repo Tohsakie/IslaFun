@@ -12,13 +12,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="+"
-            android:textSize="60sp"
-            android:onClick="onPlus">
-        </TextView>
+
         <ListView
             android:id="@+id/mainListView"
             android:layout_width="wrap_content"
@@ -30,19 +24,13 @@
             android:gravity="center"
             android:orientation="horizontal">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:maxHeight="50dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/user"
-                android:onClick="onAno" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ano"
-                android:gravity="center"/>
+                android:text="+"
+                android:textSize="60sp"
+                android:onClick="onPlus">
+            </TextView>
         </LinearLayout>
     </LinearLayout>
 
