@@ -1,4 +1,4 @@
-package com.example.fontanathacquarg.culture;
+package com.example.fontanathacquarg.data;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Dao;

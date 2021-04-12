@@ -16,7 +16,7 @@ public class CultureExerciceActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_culture_exercice);
         mdb = DatabaseClient.getInstance(getApplicationContext());
-
+        mdb.getAppDatabase().userDao();
 
     }
 }
